@@ -1,0 +1,40 @@
+﻿@using Auto_Manager_Hub.DataAccess.Functions.TVF
+@model List<MakeModelsWithSubModels>
+
+
+
+@if (TempData["MakeName"] is not null)
+{
+    <h2>All Models Of The @TempData["MakeName"]</h2>
+}
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Make ID</th>
+            <th>Make Name</th>
+            <th>Model Name</th>
+            <th>SubModel Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (!Model.Any())
+        {
+            <h3>There is No Models For This Make !</h3>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MakeID</td>
+                    <td>@item.MakeName</td>
+                    <td>@item.ModelName</td>
+                    <td>@item.SubModelName</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" asp-controller="Home" asp-action="Index">Back To Home</a>

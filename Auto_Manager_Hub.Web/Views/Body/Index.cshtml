@@ -1,0 +1,24 @@
+﻿@using Auto_Manager_Hub.Models.Models
+@model List<TblBody> 
+
+<h1>Bodies</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Body ID</th>
+            <th>Body Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.BodyId</td>
+                <td>@item.BodyName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" asp-controller="Home" asp-action="Index">Back To Home</a>

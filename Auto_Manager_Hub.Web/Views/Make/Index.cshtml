@@ -1,0 +1,30 @@
+﻿@using Auto_Manager_Hub.Models.Models
+@model List<TblMake>
+
+
+<h2>Vehicle Makes [Main Brands]</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Make ID</th>
+            <th>Make [Brand] Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MakeId</td>
+                <td>@item.Make</td>
+                <td>
+                    <a class=" btn btn-primary" asp-controller="MakeModels" asp-action="Index" asp-route-MakeID ="@item.MakeId">
+                        <i class="bi bi-arrow-right-square-fill"></i> Show Models
+                        </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" asp-controller="Home" asp-action="Index">Back To Home</a>

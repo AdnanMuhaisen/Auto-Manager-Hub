@@ -1,0 +1,23 @@
+﻿@using Auto_Manager_Hub.Models.Models
+@model List<TblDriveType>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Drive Type ID</th>
+            <th>Drive Type Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.DriveTypeId</td>
+                <td>@item.DType</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" asp-controller="Home" asp-action="Index">Back To Home</a>

@@ -1,4 +1,4 @@
-using Auto_Manager_Hub.Web.Models;
+using Auto_Manager_Hub.Web.Models.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

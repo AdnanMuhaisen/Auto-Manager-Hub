@@ -1,0 +1,24 @@
+﻿@using Auto_Manager_Hub.Models.Models
+@model List<TblFuelType>
+
+
+<h2>Fuel Types</h2>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Fuel Type ID</th>
+            <th>Fuel Type Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FuelTypeId</td>
+                <td>@item.FuelTypeName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" asp-controller="Home" asp-action="Index">Back To Home</a>
