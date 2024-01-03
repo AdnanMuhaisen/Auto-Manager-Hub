@@ -1,6 +1,10 @@
 ﻿@using Auto_Manager_Hub.Models.Models
-@model List<TblDriveType>
+@model List<DriveType>
 
+
+<a class="btn btn-primary mb-3" asp-controller="DriveType" asp-action="Upsert">
+    <i class="bi bi-file-plus-fill"></i> New Drive Type
+</a>
 
 <table class="table table-bordered table-striped">
     <thead>
@@ -15,6 +19,10 @@
             <tr>
                 <td>@item.DriveTypeId</td>
                 <td>@item.DType</td>
+                <td>
+                    <a class="btn btn-primary mr-2" asp-controller="DriveType" asp-action="Upsert" asp-route-ID="@item.DriveTypeId">Edit</a>
+                    <a class="btn btn-primary btn-danger" asp-controller="DriveType" asp-action="Remove" asp-route-ID="@item.DriveTypeId">Remove</a>
+                </td>
             </tr>
         }
     </tbody>

@@ -1,0 +1,19 @@
+﻿@model Make
+
+<h2>
+    Remove Make [Brand]
+</h2>
+
+<form method="post">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Make ID</span>
+        <input disabled name="ID" type="text" class="form-control" asp-for="MakeId" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Make Name</span>
+        <input disabled type="text" class="form-control" asp-for="MakeName" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <input type="submit" class="btn btn-primary btn-danger" value="Delete" />
+    <a class="btn btn-primary" asp-controller="Make" asp-action="Index">Back To Makes</a>
+</form>

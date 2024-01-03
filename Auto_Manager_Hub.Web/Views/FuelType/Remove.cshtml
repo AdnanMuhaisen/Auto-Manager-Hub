@@ -1,0 +1,19 @@
+﻿@model FuelType
+
+<h2>
+    Remove Fuel Type
+</h2>
+
+<form method="post">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Fuel Type ID</span>
+        <input disabled name="ID" type="text" class="form-control" asp-for="FuelTypeId" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Fuel Type</span>
+        <input disabled type="text" class="form-control" asp-for="FuelTypeName" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <input type="submit" class="btn btn-primary btn-danger" value="Delete" />
+    <a class="btn btn-primary" asp-controller="FuelType" asp-action="Index">Back To FuelTypes</a>
+</form>

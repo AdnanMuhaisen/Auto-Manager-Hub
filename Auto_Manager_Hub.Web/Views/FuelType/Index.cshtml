@@ -1,8 +1,13 @@
 ﻿@using Auto_Manager_Hub.Models.Models
-@model List<TblFuelType>
+@model List<FuelType>
 
 
 <h2>Fuel Types</h2>
+
+<a class="btn btn-primary mb-3" asp-controller="FuelType" asp-action="Upsert">
+    <i class="bi bi-file-plus-fill"></i>New Fuel Type
+</a>
+
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -16,6 +21,10 @@
             <tr>
                 <td>@item.FuelTypeId</td>
                 <td>@item.FuelTypeName</td>
+                <td>
+                    <a class="btn btn-primary mr-2" asp-controller="FuelType" asp-action="Upsert" asp-route-ID="@item.FuelTypeId">Edit</a>
+                    <a class="btn btn-primary btn-danger" asp-controller="FuelType" asp-action="Remove" asp-route-ID="@item.FuelTypeId">Remove</a>
+                </td>
             </tr>
         }
     </tbody>

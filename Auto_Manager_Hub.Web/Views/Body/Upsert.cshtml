@@ -1,0 +1,22 @@
+﻿@model Body
+
+<h2>
+    @((Model.BodyId == 0)?"New Body Type":"Edit Body Type")
+</h2>
+
+<form method="post">
+    <input asp-for="BodyId" hidden />
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Body Name</span>
+        <input type="text" class="form-control" asp-for="BodyName" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <span asp-validation-for="BodyName" class="text-danger m-2"></span>
+    </div>
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+    <input type="submit" class="btn btn-primary" value=@((Model.BodyId==0)?"ADD":"Update")/>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

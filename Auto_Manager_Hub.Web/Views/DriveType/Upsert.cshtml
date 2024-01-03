@@ -1,0 +1,20 @@
+﻿@model DriveType
+
+<h2>@((Model.DriveTypeId==0)?"Create New Drive Type":"Update Drive Type")</h2>
+
+<form method="post">
+    <input asp-for="DriveTypeId" hidden />
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Drive Type</span>
+        <input type="text" class="form-control" asp-for="DType" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <span asp-validation-for="DType" class="text-danger m-2"></span>
+    </div>
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+    <input type="submit" class="btn btn-primary" value=@((Model.DriveTypeId==0)?"ADD":"Update") />
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

@@ -1,0 +1,20 @@
+﻿@model FuelType
+
+<h2>@((Model.FuelTypeId == 0) ? "Create New Fuel Type" : "Update Fuel Type")</h2>
+
+<form method="post">
+    <input asp-for="FuelTypeId" hidden />
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Fuel Type</span>
+        <input type="text" class="form-control" asp-for="FuelTypeName" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <span asp-validation-for="FuelTypeName" class="text-danger m-2"></span>
+    </div>
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+    <input type="submit" class="btn btn-primary" value=@((Model.FuelTypeId==0)?"ADD":"Update") />
+</form>
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

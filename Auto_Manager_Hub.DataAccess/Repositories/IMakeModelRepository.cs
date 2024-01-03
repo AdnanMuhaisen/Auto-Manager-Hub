@@ -3,8 +3,8 @@ using Auto_Manager_Hub.Models.Models;
 
 namespace Auto_Manager_Hub.DataAccess.Repositories
 {
-    public interface IMakeModelRepository : IRepository<TblMakeModel>
+    public interface IMakeModelRepository : IRepository<MakeModel>
     {
-        void Update(TblMakeModel entity);
+        void Update(MakeModel entity);
     }
 }

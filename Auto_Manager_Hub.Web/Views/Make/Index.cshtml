@@ -1,8 +1,12 @@
 ﻿@using Auto_Manager_Hub.Models.Models
-@model List<TblMake>
+@model List<Make>
 
 
 <h2>Vehicle Makes [Main Brands]</h2>
+
+<a class="btn btn-primary mb-3" asp-controller="Make" asp-action="Upsert" asp-route-ID="0">
+    <i class="bi bi-file-plus-fill"></i> New Make
+</a>
 
 <table class="table table-bordered table-striped">
     <thead>
@@ -16,11 +20,13 @@
         {
             <tr>
                 <td>@item.MakeId</td>
-                <td>@item.Make</td>
+                <td>@item.MakeName</td>
                 <td>
-                    <a class=" btn btn-primary" asp-controller="MakeModels" asp-action="Index" asp-route-MakeID ="@item.MakeId">
+                    <a class=" btn btn-primary mr-2" asp-controller="MakeModels" asp-action="Index" asp-route-MakeID ="@item.MakeId">
                         <i class="bi bi-arrow-right-square-fill"></i> Show Models
                         </a>
+                    <a class="btn btn-primary mr-2" asp-controller="Make" asp-action="Upsert" asp-route-ID="@item.MakeId">Edit</a>
+                    <a class="btn btn-primary btn-danger" asp-controller="Make" asp-action="Remove" asp-route-ID="@item.MakeId">Remove</a>
                 </td>
             </tr>
         }

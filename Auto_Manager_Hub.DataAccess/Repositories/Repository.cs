@@ -20,18 +20,28 @@ namespace Auto_Manager_Hub.DataAccess.Repositories
             dbSet.Add(entity);
         }
 
-        public IEnumerable<T> GetAll()
+        public IEnumerable<T> GetAll(bool AsNoTracking = false)
         {
+            if(!AsNoTracking)
+            {
+                return dbSet.ToList();
+            }
+
             return dbSet.AsNoTracking().ToList();
         }
 
-        public T? GetFirstOrDefault()
+        public T? GetFirstOrDefault(bool AsNoTracking = false)
         {
+            if(!AsNoTracking)
+            {
+                return dbSet.FirstOrDefault();
+            }
             return dbSet.AsNoTracking().FirstOrDefault();
         }
 
         public void Remove(T entity)
         {
+            dbSet.Entry(entity).State = EntityState.Deleted;
             dbSet.Remove(entity);
         }
 
@@ -40,8 +50,13 @@ namespace Auto_Manager_Hub.DataAccess.Repositories
             dbSet.RemoveRange(range);
         }
 
-        public T? Get(Expression<Func<T, bool>> filter)
+        public T? Get(Expression<Func<T, bool>> filter, bool AsNoTracking = false)
         {
+            if (!AsNoTracking)
+            {
+                return dbSet.Where(filter).FirstOrDefault();
+            }
+
             return dbSet.AsNoTracking().Where(filter).FirstOrDefault();
         }
     }

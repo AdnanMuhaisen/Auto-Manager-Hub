@@ -2,9 +2,9 @@
 {
     public class MakeModelsWithSubModels
     {
-        public int MakeID { get; set; }
-        public string MakeName { get; set; } = null!;
-        public string ModelName { get; set; } = null!;
-        public string SubModelName { get; set; } = null!;
+        public int Make_ID { get; set; }
+        public string Make_Name { get; set; } = null!;
+        public string Model_Name { get; set; } = null!;
+        public string SubModel_Name { get; set; } = null!;
     }
 }

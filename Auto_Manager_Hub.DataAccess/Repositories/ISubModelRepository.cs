@@ -2,8 +2,8 @@
 
 namespace Auto_Manager_Hub.DataAccess.Repositories
 {
-    public interface ISubModelRepository:IRepository<TblSubModel>
+    public interface ISubModelRepository:IRepository<SubModel>
     {
-        void Update(TblSubModel entity);
+        void Update(SubModel entity);
     }
 }

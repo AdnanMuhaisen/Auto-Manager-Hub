@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\C#\SharedPackages (.NET8)\SharedPackages (.NET8).csproj" />
+    <ProjectReference Include="..\..\C#\SharedPackages (.NET8)\SharedPackages (.NET8).csproj" />
     <ProjectReference Include="..\Auto_Manager_Hub.Models\Auto_Manager_Hub.Models.csproj" />
   </ItemGroup>
 

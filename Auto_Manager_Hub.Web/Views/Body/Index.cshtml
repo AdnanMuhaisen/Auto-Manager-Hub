@@ -1,7 +1,11 @@
 ﻿@using Auto_Manager_Hub.Models.Models
-@model List<TblBody> 
+@model List<Body> 
 
 <h1>Bodies</h1>
+
+<a class="btn btn-primary mb-3" asp-controller="Body" asp-action="Upsert">
+    <i class="bi bi-file-plus-fill"></i> New Body
+</a>
 
 <table class="table table-bordered table-striped">
     <thead>
@@ -16,6 +20,10 @@
             <tr>
                 <td>@item.BodyId</td>
                 <td>@item.BodyName</td>
+                <td>
+                    <a class="btn btn-primary mr-2" asp-controller="Body" asp-action="Upsert" asp-route-ID="@item.BodyId">Edit</a>
+                    <a class="btn btn-primary btn-danger" asp-controller="Body" asp-action="Remove" asp-route-ID="@item.BodyId">Remove</a>
+                </td>
             </tr>
         }
     </tbody>

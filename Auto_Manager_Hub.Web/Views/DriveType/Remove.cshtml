@@ -1,0 +1,19 @@
+﻿@model DriveType
+
+<h2>
+    Remove Drive Type
+</h2>
+
+<form method="post">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Body ID</span>
+        <input disabled name="ID" type="text" class="form-control" asp-for="DriveTypeId" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Body Name</span>
+        <input disabled type="text" class="form-control" asp-for="DType" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <input type="submit" class="btn btn-primary btn-danger" value="Delete" />
+    <a class="btn btn-primary" asp-controller="DriveType" asp-action="Index">Back To Drive Types</a>
+</form>

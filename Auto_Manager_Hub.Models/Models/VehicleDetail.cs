@@ -1,7 +1,7 @@
 ﻿namespace Auto_Manager_Hub.Models.Models
 {
 
-    public class TblVehicleDetail
+    public class VehicleDetail
     {
         public int Id { get; set; }
 
@@ -31,12 +31,12 @@
 
         public byte? NumDoors { get; set; }
 
-        public virtual TblBody? Body { get; set; }
+        public virtual Body? Body { get; set; }
 
-        public virtual TblDriveType? DriveType { get; set; }
+        public virtual DriveType? DriveType { get; set; }
 
-        public virtual TblFuelType? FuelType { get; set; }
+        public virtual FuelType? FuelType { get; set; }
 
-        public virtual TblSubModel? SubModel { get; set; }
+        public virtual SubModel? SubModel { get; set; }
     }
 }

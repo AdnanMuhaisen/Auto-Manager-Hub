@@ -2,8 +2,8 @@
 
 namespace Auto_Manager_Hub.DataAccess.Repositories
 {
-    public interface IFuelTypeRepository : IRepository<TblFuelType>
+    public interface IFuelTypeRepository : IRepository<FuelType>
     {
-        void Update(TblFuelType entity);
+        void Update(FuelType entity);
     }
 }

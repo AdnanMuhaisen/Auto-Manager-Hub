@@ -2,8 +2,8 @@
 
 namespace Auto_Manager_Hub.DataAccess.Repositories
 {
-    public interface IMakeRepository : IRepository<TblMake>
+    public interface IMakeRepository : IRepository<Make>
     {
-        void Update(TblMake entity);
+        void Update(Make entity);
     }
 }

@@ -2,8 +2,8 @@
 
 namespace Auto_Manager_Hub.DataAccess.Repositories
 {
-    public interface IBodyRepository : IRepository<TblBody>
+    public interface IBodyRepository : IRepository<Body>
     {
-        void Update(TblBody entity);
+        void Update(Body entity);
     }
 }

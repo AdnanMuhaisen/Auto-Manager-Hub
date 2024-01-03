@@ -1,0 +1,21 @@
+﻿@model Make
+
+<h2>@((Model.MakeId == 0) ? "Create New Make" : "Update Make")</h2>
+
+<form method="post">
+    <input asp-for="MakeId" hidden />
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Make Name</span>
+        <input type="text" class="form-control" asp-for="MakeName" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <span asp-validation-for="MakeName" class="text-danger m-2"></span>
+    </div>
+    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+    <input type="submit" class="btn btn-primary" value=@((Model.MakeId==0)?"ADD":"Update") />
+</form>
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

@@ -1,5 +1,4 @@
 ﻿using Auto_Manager_Hub.DataAccess.Data;
-using Auto_Manager_Hub.DataAccess.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Auto_Manager_Hub.Web.Controllers
@@ -15,19 +14,20 @@ namespace Auto_Manager_Hub.Web.Controllers
 
         public IActionResult Index(int MakeID)
         {
+            //error here
             var makeModels = _context
                 .fnGetMakeModels(MakeID)
                 .ToList();
 
             if (makeModels.Count() > 0)
             {
-                TempData["MakeName"] = makeModels.FirstOrDefault()?.MakeName;
+                TempData["MakeName"] = makeModels.FirstOrDefault()?.Make_Name;
             }
 
-            if (TempData["MakeName"] is null)
-            {
-                return NotFound();
-            }
+            //if (TempData["MakeName"] is null)
+            //{
+            //    return NotFound();
+            //}
 
             return View(makeModels);
         }

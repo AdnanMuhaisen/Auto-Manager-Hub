@@ -1,0 +1,19 @@
+﻿@model Body
+
+<h2>
+     Remove Body Type
+</h2>
+
+<form method="post">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Body ID</span>
+        <input disabled name="ID" type="text" class="form-control" asp-for="BodyId" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default">Body Name</span>
+        <input disabled type="text" class="form-control" asp-for="BodyName" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>  
+    <input type="submit" class="btn btn-primary btn-danger" value="Delete" />
+    <a class="btn btn-primary" asp-controller="Body" asp-action="Index">Back To Bodies</a>
+</form>
