@@ -1,4 +1,6 @@
 ﻿using Auto_Manager_Hub.DataAccess.Data;
+using Auto_Manager_Hub.Models.Models;
+using Auto_Manager_Hub.Utility.Excel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Auto_Manager_Hub.Web.Controllers
@@ -30,6 +32,20 @@ namespace Auto_Manager_Hub.Web.Controllers
             //}
 
             return View(makeModels);
+        }
+
+        [HttpGet]
+        public IActionResult GenerateExcel(int? ID)
+        {
+            ArgumentNullException.ThrowIfNull(nameof(ID));
+
+            var makeModels = _context
+                .fnGetMakeModels(ID ?? 0)
+                .ToList();
+
+            ExcelSheetGenerator.GenerateFor(makeModels);
+
+            return View("Index", makeModels);
         }
     }
 }

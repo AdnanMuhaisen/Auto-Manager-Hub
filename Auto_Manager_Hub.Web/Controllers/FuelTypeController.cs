@@ -1,5 +1,6 @@
 ﻿using Auto_Manager_Hub.DataAccess.Repositories;
 using Auto_Manager_Hub.Models.Models;
+using Auto_Manager_Hub.Utility.Excel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Auto_Manager_Hub.Web.Controllers
@@ -122,6 +123,16 @@ namespace Auto_Manager_Hub.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public IActionResult GenerateExcel()
+        {
+            var fuelTypes = _unitOfWork
+                .FuelTypeRepository
+                .GetAll(AsNoTracking: true);
 
+            ExcelSheetGenerator.GenerateFor(fuelTypes);
+
+            return View("Index", fuelTypes);
+        }
     }
 }

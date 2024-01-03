@@ -1,4 +1,5 @@
 ﻿using Auto_Manager_Hub.DataAccess.Repositories;
+using Auto_Manager_Hub.Utility.Excel;
 using Microsoft.AspNetCore.Mvc;
 using DTModel = Auto_Manager_Hub.Models.Models.DriveType;
 
@@ -117,6 +118,18 @@ namespace Auto_Manager_Hub.Web.Controllers
 
             _unitOfWork.Save();
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult GenerateExcel()
+        {
+            var driveTypes = _unitOfWork
+                .DriveTypeRepository
+                .GetAll(AsNoTracking: true);
+
+            ExcelSheetGenerator.GenerateFor(driveTypes);
+
+            return View("Index", driveTypes);
         }
     }
 }

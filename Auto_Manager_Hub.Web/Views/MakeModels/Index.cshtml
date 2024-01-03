@@ -8,6 +8,12 @@
     <h2>All Models Of The @TempData["MakeName"]</h2>
 }
 
+<div style="display:inline-block">
+    <div class="badge bg-primary text-wrap w-auto p-2 mb-2" style="width: 6rem;">
+        Total number of rows : @Model.Count()
+    </div>
+</div>
+
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -37,4 +43,7 @@
     </tbody>
 </table>
 
-<a class="btn btn-primary" asp-controller="Home" asp-action="Index">Back To Home</a>
+<a class="btn btn-primary mr-3" asp-controller="Make" asp-action="Index">Back To Makes</a>
+<a class="btn btn-primary ml-2" asp-controller="MakeModels" asp-action="GenerateExcel" asp-route-ID = "@Model?.FirstOrDefault()?.Make_ID">
+    Download As Excel Sheet <i class="bi bi-filetype-xlsx"></i>
+</a>

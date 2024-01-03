@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -7,8 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\C#\SharedPackages (.NET8)\SharedPackages (.NET8).csproj" />
     <ProjectReference Include="..\Auto_Manager_Hub.DataAccess\Auto_Manager_Hub.DataAccess.csproj" />
     <ProjectReference Include="..\Auto_Manager_Hub.Models\Auto_Manager_Hub.Models.csproj" />
+    <ProjectReference Include="..\Auto_Manager_Hub.Utility\Auto_Manager_Hub.Utility.csproj" />
   </ItemGroup>
 
 </Project>

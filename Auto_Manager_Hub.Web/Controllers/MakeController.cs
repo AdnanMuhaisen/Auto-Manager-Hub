@@ -1,5 +1,6 @@
 ﻿using Auto_Manager_Hub.DataAccess.Repositories;
 using Auto_Manager_Hub.Models.Models;
+using Auto_Manager_Hub.Utility.Excel;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -109,6 +110,18 @@ namespace Auto_Manager_Hub.Web.Controllers
             _unitOfWork.Save();
 
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult GenerateExcel()
+        {
+            var makes = _unitOfWork
+                .MakeRepository
+                .GetAll(AsNoTracking: true);
+
+            ExcelSheetGenerator.GenerateFor(makes);
+
+            return View("Index", makes);
         }
     }
 }

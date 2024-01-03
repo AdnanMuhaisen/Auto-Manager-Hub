@@ -1,5 +1,6 @@
 ﻿using Auto_Manager_Hub.DataAccess.Repositories;
 using Auto_Manager_Hub.Models.Models;
+using Auto_Manager_Hub.Utility.Excel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Auto_Manager_Hub.Web.Controllers
@@ -106,6 +107,17 @@ namespace Auto_Manager_Hub.Web.Controllers
             _unitOfWork.Save();
 
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult GenerateExcel()
+        {
+            var bodyTypes = _unitOfWork
+                .BodyRepository
+                .GetAll(AsNoTracking: true);
+
+            ExcelSheetGenerator.GenerateFor(bodyTypes);
+            return View("Index", bodyTypes);
         }
     }
 }
